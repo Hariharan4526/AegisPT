@@ -4,7 +4,7 @@ PentestLab AI is an automated penetration testing platform for authorized securi
 
 ## Current Scope
 
-Module 1 is implemented: backend foundation plus authentication, projects, targets, and scan orchestration.
+Module 1 is implemented: backend foundation plus authentication, projects, targets, scan orchestration, and web enumeration.
 
 Included in this slice:
 
@@ -18,6 +18,7 @@ Included in this slice:
 - Auth API endpoints for register, login, refresh, logout, and me
 - Project API endpoints for CRUD and target management
 - Scanner API endpoints for Nmap-backed execution and stored results
+- Web enumeration API endpoints for ffuf/WhatWeb runs and normalized findings
 - API and unit tests
 - Docker backend image and Compose stack for PostgreSQL and Redis
 
@@ -63,4 +64,4 @@ docker compose up --build
 
 ## Next Module
 
-The next module should be web enumeration, starting with ffuf and WhatWeb orchestration.
+The next module should be vulnerability assessment and CVE intelligence.
