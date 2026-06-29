@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pentestlab-ai-backend"
+version = "0.1.0"
+description = "PentestLab AI backend for authorized penetration testing workflows"
+requires-python = ">=3.13"
+dependencies = [
+  "alembic>=1.13.2",
+  "celery>=5.4.0",
+  "email-validator>=2.2.0",
+  "fastapi>=0.115.6",
+  "httpx>=0.27.2",
+  "bcrypt<5.0.0",
+  "passlib[bcrypt]>=1.7.4",
+  "psycopg[binary]>=3.2.3",
+  "pydantic>=2.10.3",
+  "pydantic-settings>=2.6.1",
+  "python-jose[cryptography]>=3.3.0",
+  "python-multipart>=0.0.12",
+  "redis>=5.2.0",
+  "sqlalchemy>=2.0.36",
+  "uvicorn[standard]>=0.32.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.4",
+  "pytest-cov>=6.0.0",
+  "pytest-asyncio>=0.25.2",
+  "ruff>=0.8.2",
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
