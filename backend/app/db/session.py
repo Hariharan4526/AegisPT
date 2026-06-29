@@ -47,6 +47,7 @@ def initialize_database(database_url: str | None = None) -> None:
     import app.models.token  # noqa: F401
     import app.models.user  # noqa: F401
     import app.models.web_enum  # noqa: F401
+    import app.models.vulnerability  # noqa: F401
 
     engine = get_engine(database_url)
     Base.metadata.create_all(bind=engine)
